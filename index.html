@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remidi STS IPAS Kelas 6 SD</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Cinzel:wght@700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen text-slate-800 flex flex-col justify-between">
+
+    <!-- HEADER / NAVBAR -->
+    <header class="bg-gradient-to-r from-emerald-700 via-teal-700 to-cyan-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <div class="bg-white/20 p-2 rounded-xl backdrop-blur-md">
+                    <i class="fa-solid fa-leaf text-2xl text-yellow-300"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg sm:text-xl leading-tight">Remidi STS IPAS</h1>
+                    <p class="text-xs text-emerald-100">Kelas 6 SD - T.P. 2026/2027</p>
+                </div>
+            </div>
+
+            <!-- MENU TAB -->
+            <nav class="flex bg-emerald-900/40 p-1 rounded-xl gap-1 border border-white/10 w-full sm:w-auto justify-center">
+                <button onclick="switchTab('materi')" id="btn-materi" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 bg-yellow-400 text-slate-900 shadow">
+                    <i class="fa-solid fa-book-open"></i> <span>1. Rangkuman Materi</span>
+                </button>
+                <button onclick="switchTab('kuis')" id="btn-kuis" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 hover:bg-white/10 text-white">
+                    <i class="fa-solid fa-pen-to-square"></i> <span>2. Soal Remidi (25 PG)</span>
+                </button>
+                <button onclick="switchTab('sertifikat')" id="btn-sertifikat" class="tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 hover:bg-white/10 text-white">
+                    <i class="fa-solid fa-award"></i> <span>3. Sertifikat</span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- CONTENT WRAPPER -->
+    <main class="max-w-5xl mx-auto px-4 py-6 w-full flex-grow">
+
+        <!-- ================= MENU 1: RANGKUMAN MATERI ================= -->
+        <section id="tab-materi" class="space-y-6">
+            <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200">
+                <h2 class="text-2xl font-bold text-emerald-900 mb-2 flex items-center gap-3">
+                    <i class="fa-solid fa-lightbulb text-yellow-500"></i> Rangkuman Materi STS IPAS Kelas 6
+                </h2>
+                <p class="text-slate-600 text-sm">Pelajari seluruh materi sesuai kisi-kisi di bawah ini sebelum mengerjakan kuis remidi pilihan ganda.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Materi 1: Sistem Pencernaan -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-emerald-600 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg text-emerald-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-utensils text-emerald-600"></i> 1. Sistem Pencernaan Manusia
+                    </h3>
+                    <div class="bg-emerald-50 p-3 rounded-xl text-xs space-y-2 text-emerald-950">
+                        <p><strong>• Urutan Saluran:</strong> Mulut → Kerongkongan (Gerak Peristaltik) → Lambung → Usus Halus → Usus Besar → Anus.</p>
+                        <p><strong>• Pencernaan Mekanis & Kimiawi:</strong> Berlangsung bersamaan pada <i>mulut</i> dan <i>lambung</i>.</p>
+                        <p><strong>• Fungsi Utama:</strong> Usus halus (penyerapan zat gizi), Usus besar (penyerapan air & pembentukan feses).</p>
+                    </div>
+                </div>
+
+                <!-- Materi 2: Zat Gizi -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-teal-600 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg text-teal-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-apple-whole text-teal-600"></i> 2. Zat Gizi & Kebiasaan Sehat
+                    </h3>
+                    <div class="bg-teal-50 p-3 rounded-xl text-xs space-y-2 text-teal-950">
+                        <p><strong>• Karbohidrat:</strong> Sumber energi utama bagi tubuh (nasi, singkong, kentang).</p>
+                        <p><strong>• Zat Besi:</strong> Mencegah anemia/lemas (bayam, hati ayam, daging merah).</p>
+                        <p><strong>• Serat:</strong> Melancarkan pencernaan & mencegah sembelit (buah & sayur).</p>
+                    </div>
+                </div>
+
+                <!-- Materi 3: Sistem Pernapasan -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-cyan-600 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg text-cyan-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-lungs text-cyan-600"></i> 3. Sistem Pernapasan Manusia
+                    </h3>
+                    <div class="bg-cyan-50 p-3 rounded-xl text-xs space-y-2 text-cyan-950">
+                        <p><strong>• Jalur Udara:</strong> Hidung → Tenggorokan (Trakea) → Bronkus → Bronkiolus → Alveolus.</p>
+                        <p><strong>• Alveolus:</strong> Tempat terjadinya pertukaran gas $O_2$ dan $CO_2$.</p>
+                    </div>
+                </div>
+
+                <!-- Materi 4: Kesehatan Lingkungan -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border-l-4 border-amber-500 hover:shadow-md transition">
+                    <h3 class="font-bold text-lg text-amber-900 mb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-mask-ventilator text-amber-600"></i> 4. Gangguan Kesehatan & Lingkungan
+                    </h3>
+                    <div class="bg-amber-50 p-3 rounded-xl text-xs space-y-2 text-amber-950">
+                        <p><strong>• Perokok Pasif:</strong> Berisiko terkena penyakit paru-paru akibat asap rokok orang lain.</p>
+                        <p><strong>• Kualitas Udara Buruk:</strong> Pakai masker medis/N95 & kurangi aktivitas di luar rumah.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pt-4">
+                <button onclick="switchTab('kuis')" class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5">
+                    Mulai Kerjakan 25 Soal PG <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ================= MENU 2: SOAL REMIDI ================= -->
+        <section id="tab-kuis" class="hidden space-y-6">
+            <!-- IDENTITAS SISWA -->
+            <div id="box-identitas" class="bg-white p-6 rounded-2xl shadow-md border border-slate-200 max-w-xl mx-auto">
+                <div class="text-center mb-6">
+                    <div class="inline-block bg-emerald-100 text-emerald-800 p-3 rounded-full mb-2">
+                        <i class="fa-solid fa-user-graduate text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800">Formulir Peserta Remidi IPAS</h3>
+                    <p class="text-slate-500 text-xs">Isi data diri sebelum membuka lembar 25 soal pilihan ganda</p>
+                </div>
+                
+                <form id="form-siswa" onsubmit="mulaiKuis(event)" class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nama Lengkap Siswa</label>
+                        <input type="text" id="input-nama" required placeholder="Masukkan Nama Lengkap" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-700 uppercase mb-1">No. Absen / Kelas</label>
+                        <input type="text" id="input-kelas" required placeholder="Contoh: 12 / VI-A" class="w-full px-4 py-2.5 rounded-xl border border-slate-300 focus:ring-2 focus:ring-emerald-500 focus:outline-none text-sm">
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md transition">
+                        Buka Lembar Soal <i class="fa-solid fa-play ml-2"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- AREA SOAL KUIS -->
+            <div id="box-soal" class="hidden max-w-3xl mx-auto space-y-6">
+                <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex justify-between items-center">
+                    <div>
+                        <span class="text-xs font-bold text-slate-400 uppercase">Peserta:</span>
+                        <p class="font-bold text-emerald-900 text-sm" id="label-peserta">-</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs font-bold text-slate-400 uppercase">Soal PG</span>
+                        <p class="font-bold text-teal-600 text-sm"><span id="no-soal-aktif">1</span> / <span id="total-soal">25</span></p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-md border border-slate-200">
+                    <p class="text-xs font-semibold text-emerald-600 uppercase tracking-wider mb-2" id="kategori-soal">Materi Kuis</p>
+                    <h3 class="text-base sm:text-lg font-semibold text-slate-800 leading-relaxed mb-6" id="teks-soal">Pertanyaan akan dimuat di sini...</h3>
+                    <div class="space-y-3" id="container-pilihan"></div>
+                </div>
+
+                <div class="flex justify-between items-center pt-2">
+                    <button id="btn-prev" onclick="prevSoal()" class="px-5 py-2.5 rounded-xl border border-slate-300 font-semibold text-slate-600 text-sm hover:bg-slate-50 transition disabled:opacity-40 disabled:cursor-not-allowed">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Sebelum
+                    </button>
+                    <button id="btn-next" onclick="nextSoal()" class="px-6 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 font-semibold text-white text-sm shadow transition">
+                        Berikut <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                    <button id="btn-finish" onclick="selesaikanKuis()" class="hidden px-6 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 font-bold text-white text-sm shadow transition">
+                        Selesai & Kirim <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- HASIL KUIS -->
+            <div id="box-hasil" class="hidden max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg border border-slate-200 text-center space-y-6">
+                <div id="hasil-icon" class="w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl"></div>
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800" id="hasil-title">Hasil Evaluasi Remidi IPAS</h3>
+                    <p class="text-sm text-slate-500 mt-1" id="hasil-subtitle">Nilai Anda telah dihitung dan berhasil dikirim ke spreadsheet.</p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                    <span class="text-xs font-bold text-slate-400 uppercase">Nilai Akhir</span>
+                    <div class="text-5xl font-extrabold text-emerald-700 my-2" id="hasil-skor">0</div>
+                    <div class="inline-block px-4 py-1 rounded-full text-xs font-bold" id="hasil-status">STATUS</div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <button onclick="switchTab('sertifikat')" class="flex-1 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-4 rounded-xl shadow transition text-sm">
+                        <i class="fa-solid fa-award mr-1"></i> Lihat Sertifikat
+                    </button>
+                    <button onclick="resetKuis()" class="flex-1 border border-slate-300 hover:bg-slate-100 font-semibold py-3 px-4 rounded-xl transition text-sm text-slate-700">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> Ulangi Pengerjaan
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MENU 3: SERTIFIKAT ================= -->
+        <section id="tab-sertifikat" class="hidden space-y-6">
+            <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div>
+                    <h2 class="font-bold text-lg text-slate-800">Sertifikat Hasil Evaluasi STS IPAS</h2>
+                    <p class="text-xs text-slate-500">Sertifikat bukti pencapaian ketuntasan peserta didik.</p>
+                </div>
+                <button onclick="downloadSertifikat()" id="btn-download" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl shadow text-sm transition flex items-center gap-2">
+                    <i class="fa-solid fa-download"></i> Unduh Sertifikat (PNG)
+                </button>
+            </div>
+
+            <div class="overflow-x-auto pb-4">
+                <div id="sertifikat-card" class="bg-gradient-to-br from-amber-50 via-white to-emerald-50 w-[780px] h-[550px] mx-auto p-8 relative rounded-xl shadow-xl border-8 border-emerald-900 flex flex-col justify-between select-none">
+                    <div class="absolute inset-3 border-2 border-amber-500 pointer-events-none rounded-lg"></div>
+
+                    <div class="text-center space-y-1 relative z-10">
+                        <div class="flex justify-center items-center gap-2 text-emerald-900 font-bold text-xs uppercase tracking-widest">
+                            <i class="fa-solid fa-graduation-cap text-amber-600 text-lg"></i>
+                            <span>Sekolah Dasar Negeri Utama</span>
+                        </div>
+                        <h2 class="font-cinzel text-3xl font-extrabold text-emerald-950 tracking-wider">SERTIFIKAT KETUNTASAN</h2>
+                        <p class="text-xs text-amber-700 font-semibold tracking-widest uppercase">REMIDI STS IPAS KELAS 6 SD (T.P 2026/2027)</p>
+                    </div>
+
+                    <div class="text-center space-y-3 relative z-10 my-auto">
+                        <p class="text-xs text-slate-600 italic">Diberikan kepada peserta didik:</p>
+                        <h3 class="text-3xl font-bold text-emerald-900 border-b-2 border-amber-400 inline-block px-8 py-1" id="cert-nama">NAMA SISWA</h3>
+                        <p class="text-sm font-semibold text-slate-700" id="cert-kelas">No. Absen: -</p>
+                        <p class="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+                            Telah menyelesaikan rangkaian kegiatan evaluasi dan Soal Remidi STS IPAS Kelas 6 Kurikulum Merdeka dengan hasil kriteria pencapaian sebagai berikut:
+                        </p>
+                    </div>
+
+                    <div class="flex justify-between items-end relative z-10 px-6">
+                        <div class="bg-white/80 border-2 border-emerald-900 p-3 rounded-xl text-center shadow-sm w-36">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">Nilai Akhir</span>
+                            <p class="text-3xl font-extrabold text-emerald-900" id="cert-skor">0</p>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded text-emerald-800 bg-emerald-100" id="cert-status">TUNTAS</span>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-tr from-amber-500 to-yellow-300 rounded-full flex items-center justify-center text-white shadow-lg mx-auto border-2 border-white">
+                                <i class="fa-solid fa-award text-3xl"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-amber-800 uppercase tracking-widest mt-1 block">Terverifikasi</span>
+                        </div>
+
+                        <div class="text-center space-y-1">
+                            <p class="text-[10px] text-slate-500" id="cert-tanggal">Tanggal: -</p>
+                            <div class="h-10 flex items-center justify-center">
+                                <span class="font-serif italic text-sm text-emerald-950 font-bold underline">Guru Pengampu IPAS</span>
+                            </div>
+                            <p class="text-xs font-bold text-slate-800">Guru Kelas 6 SD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+        <p>© 2026 Remidi STS IPAS Kelas 6 SD - Kurikulum Merdeka</p>
+    </footer>
+
+    <!-- SCRIPT LOGIKA APLIKASI -->
+    <script>
+        // LINK GOOGLE APPS SCRIPT ANDA LENGKAP
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxT2mCc6jcw5E5dY5V2-hqhZ0RfJg0q57rpAiFCYZAlnL4R8iW4pL48ebi3hHcu9JpC/exec";
+
+        // BANK SOAL PILIHAN GANDA (TEPAT 25 SOAL IPAS)
+        const bankSoal = [
+            {
+                kategori: "Sistem Pencernaan Manusia",
+                soal: "Urutan saluran pencernaan manusia dari awal masuknya makanan hingga sisa pencernaan dikeluarkan yang benar adalah...",
+                opsi: [
+                    "Mulut - Kerongkongan - Lambung - Usus Halus - Usus Besar - Anus",
+                    "Mulut - Lambung - Kerongkongan - Usus Halus - Usus Besar - Anus",
+                    "Mulut - Kerongkongan - Usus Halus - Lambung - Usus Besar - Anus",
+                    "Mulut - Lambung - Usus Besar - Usus Halus - Kerongkongan - Anus"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pencernaan Manusia",
+                soal: "Organ pencernaan manusia yang melangsungkan proses pencernaan mekanis sekaligus kimiawi secara bersamaan adalah...",
+                opsi: ["Mulut dan lambung", "Kerongkongan dan usus besar", "Usus halus dan anus", "Hati dan kantong empedu"],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pencernaan Manusia",
+                soal: "Seorang anak mengalami gejala buang air besar dalam bentuk cair dan terjadi sangat sering. Gangguan penyerapan air ini terjadi pada organ...",
+                opsi: ["Usus Besar", "Usus Halus", "Lambung", "Kerongkongan"],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pencernaan Manusia",
+                soal: "Nasi yang dikunyah dalam waktu yang cukup lama di dalam mulut akan terasa manis. Hal ini terjadi karena...",
+                opsi: [
+                    "Enzim ptialin mengubah amilum (karbohidrat) menjadi gula sederhana",
+                    "Enzim pepsin memecah protein menjadi pepton",
+                    "Asam klorida membunuh kuman pada makanan",
+                    "Gigi menghancurkan lemak menjadi asam lemak"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Zat Gizi dan Gizi Seimbang",
+                soal: "Zat gizi yang berfungsi sebagai sumber energi utama bagi tubuh manusia untuk melakukan aktivitas sehari-hari adalah...",
+                opsi: ["Karbohidrat", "Protein", "Vitamin", "Mineral"],
+                jawaban: 0
+            },
+            {
+                kategori: "Zat Gizi dan Gizi Seimbang",
+                soal: "Siswa yang sering merasa lemas akibat kekurangan zat besi (anemia) disarankan untuk lebih banyak mengonsumsi...",
+                opsi: ["Bayam dan hati ayam", "Nasi putih dan singkong", "Minyak goreng dan mentega", "Es krim dan permen"],
+                jawaban: 0
+            },
+            {
+                kategori: "Zat Gizi dan Gizi Seimbang",
+                soal: "Menu makan siang Budi terdiri dari nasi putih porsi besar, mi goreng, dan kerupuk. Berdasarkan panduan 'Isi Piringku', menu tersebut kurang seimbang karena...",
+                opsi: [
+                    "Hanya terdiri dari karbohidrat dan minim sayur, buah, serta lauk pauk",
+                    "Kurang makanan sumber karbohidrat",
+                    "Terlalu banyak mengandung sayuran hijau",
+                    "Sangat kaya akan vitamin C dan protein"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Zat Gizi & Kesehatan Pencernaan",
+                soal: "Manfaat utama mengonsumsi makanan kaya serat (seperti buah dan sayur) bagi saluran pencernaan adalah...",
+                opsi: [
+                    "Melancarkan buang air besar dan mencegah sembelit",
+                    "Meningkatkan kadar asam lambung",
+                    "Mempercepat penyerapan minyak",
+                    "Membunuh semua bakteri di usus"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Gangguan Pencernaan",
+                soal: "Kebiasaan sering mengonsumsi makanan yang terlalu pedas saat perut kosong serta menunda jam makan dapat memicu timbulnya gangguan...",
+                opsi: ["Maag (gastritis)", "Diare", "Sembelit", "TBC"],
+                jawaban: 0
+            },
+            {
+                kategori: "Pola Hidup Sehat",
+                soal: "Tindakan di bawah ini yang paling tepat untuk memelihara kesehatan saluran pencernaan tubuh adalah...",
+                opsi: [
+                    "Mencuci tangan dengan sabun sebelum makan dan mengunyah makanan hingga halus",
+                    "Makan sambil berlari-lari",
+                    "Tidur terlentang sesaat setelah makan kenyang",
+                    "Jarang minum air putih"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pernapasan Manusia",
+                soal: "Urutan masuknya udara pernapasan dari luar ke dalam tubuh yang benar adalah...",
+                opsi: [
+                    "Hidung - Trakea (Tenggorokan) - Bronkus - Alveolus",
+                    "Hidung - Bronkus - Trakea - Alveolus",
+                    "Mulut - Alveolus - Bronkus - Trakea",
+                    "Hidung - Kerongkongan - Bronkus - Alveolus"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pernapasan Manusia",
+                soal: "Saluran pernapasan berbentuk tabung yang disokong oleh cincin-cincin tulang rawan dinamakan...",
+                opsi: ["Trakea (Tenggorokan)", "Kerongkongan", "Alveolus", "Hidung"],
+                jawaban: 0
+            },
+            {
+                kategori: "Gangguan Sistem Pernapasan",
+                soal: "Penyakit pada sistem pernapasan yang ditandai peradangan cabang tenggorokan disertai gejala batuk berdahak adalah...",
+                opsi: ["Bronkitis", "Sariawan", "Maag", "Diare"],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pernapasan & Aktivitas",
+                soal: "Mengapa frekuensi dan denyut napas seseorang menjadi jauh lebih cepat setelah melakukan aktivitas lari kencang?",
+                opsi: [
+                    "Tubuh membutuhkan lebih banyak oksigen untuk menghasilkan energi",
+                    "Ukuran paru-paru mengecil saat berlari",
+                    "Jantung berhenti berdetak saat berlari",
+                    "Kandungan oksigen di dalam darah habis total"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pernapasan Manusia",
+                soal: "Bagian paru-paru yang berupa gelembung-gelembung halus tempat terjadinya pertukaran oksigen dan karbon dioksida adalah...",
+                opsi: ["Alveolus", "Bronkus", "Hidung", "Trakea"],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pernapasan Manusia",
+                soal: "Pada saat proses inspirasi (menarik napas), kondisi otot diafragma dan rongga dada yang terjadi adalah...",
+                opsi: [
+                    "Diafragma mendatar (berkontraksi) dan rongga dada membesar",
+                    "Diafragma melengkung dan rongga dada mengecil",
+                    "Diafragma mendatar dan rongga dada mengecil",
+                    "Diafragma melengkung dan rongga dada membesar"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Gangguan & Kesehatan Pernapasan",
+                soal: "Seseorang yang tidak merokok namun ikut menghirup asap rokok dari orang lain di sekitarnya disebut perokok pasif. Bahaya utama bagi perokok pasif adalah...",
+                opsi: [
+                    "Tetap berisiko terkena gangguan paru-paru dan kanker akibat racun asap rokok",
+                    "Tidak memiliki dampak bahaya sama sekali bagi tubuhnya",
+                    "Membuat paru-paru menjadi lebih kuat",
+                    "Hanya berdampak pada gangguan pencernaan"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Kualitas Udara & Kesehatan",
+                soal: "Apabila Indeks Standar Pencemar Udara (ISPU) berada pada kategori 'Sangat Tidak Sehat', langkah perlindungan diri yang tepat adalah...",
+                opsi: [
+                    "Menggunakan masker saat berada di luar dan mengurangi aktivitas luar ruangan",
+                    "Bermain di luar rumah tanpa menggunakan masker",
+                    "Membuka semua jendela rumah selebar-lebarnya",
+                    "Berolahraga lari maraton di jalan raya"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Kesehatan Lingkungan",
+                soal: "Langkah terbaik untuk menjaga kualitas udara pernapasan di lingkungan sekolah yang berada di dekat jalan raya ramai adalah...",
+                opsi: [
+                    "Menanam banyak pohon dan tanaman hijau di sekitar halaman sekolah",
+                    "Menebang seluruh pohon agar pandangan menjadi luas",
+                    "Membakar sampah daun kering di dekat kelas",
+                    "Menutup seluruh celah ventilasi udara di dalam kelas"
+                ],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pencernaan Manusia",
+                soal: "Gerakan meremas dan mendorong makanan secara bertahap yang dilakukan oleh otot kerongkongan disebut gerak...",
+                opsi: ["Peristaltik", "Inspirasi", "Ekspirasi", "Otomatis"],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pencernaan Manusia",
+                soal: "Sebagian besar proses penyerapan sari-sari makanan oleh pembuluh darah terjadi pada organ...",
+                opsi: ["Usus Halus", "Usus Besar", "Lambung", "Kerongkongan"],
+                jawaban: 0
+            },
+            {
+                kategori: "Sistem Pernapasan Manusia",
+                soal: "Bagian di dalam rongga hidung yang berfungsi untuk menyaring debu dan kotoran dari udara yang masuk adalah...",
+                opsi: ["Rambut hidung dan selaput lendir", "Tulang rawan", "Jakun", "Cincin trakea"],
+                jawaban: 0
+            },
+            {
+                kategori: "Kesehatan Lingkungan",
+                soal: "Tumbuhan dan pohon di sekitar tempat tinggal memproduksi gas yang sangat dibutuhkan manusia untuk bernapas, yaitu...",
+                opsi: ["Oksigen ($O_2$)", "Karbon Dioksida ($CO_2$)", "Nitrogen", "Klorin"],
+                jawaban: 0
+            },
+            {
+                kategori: "Gangguan Sistem Pernapasan",
+                soal: "Penyakit paru-paru berbahaya yang disebabkan oleh infeksi bakteri *Mycobacterium tuberculosis* dinamakan penyakit...",
+                opsi: ["TBC (Tuberkulosis)", "Influenza", "Asma", "Sariawan"],
+                jawaban: 0
+            },
+            {
+                kategori: "Kesehatan Lingkungan",
+                soal: "Membakar sampah plastik di halaman rumah sangat berbahaya bagi pernapasan karena menghasilkan...",
+                opsi: ["Asap beracun yang dapat memicu sesak napas", "Gas oksigen murni", "Udara yang sejuk dan bersih", "Uap air yang menyegarkan"],
+                jawaban: 0
+            }
+        ];
+
+        let siswa = { nama: "", kelas: "" };
+        let indexSoal = 0;
+        let jawabanSiswa = new Array(bankSoal.length).fill(null);
+        let skorAkhir = 0;
+
+        function switchTab(tabName) {
+            ['materi', 'kuis', 'sertifikat'].forEach(t => {
+                document.getElementById(`tab-${t}`).classList.add('hidden');
+                document.getElementById(`btn-${t}`).className = "tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 hover:bg-white/10 text-white";
+            });
+
+            document.getElementById(`tab-${tabName}`).classList.remove('hidden');
+            document.getElementById(`btn-${tabName}`).className = "tab-btn px-4 py-2 rounded-lg text-sm font-semibold transition flex items-center gap-2 bg-yellow-400 text-slate-900 shadow";
+            
+            if(tabName === 'sertifikat') updateSertifikatView();
+        }
+
+        function mulaiKuis(e) {
+            e.preventDefault();
+            const nama = document.getElementById('input-nama').value.trim();
+            const kelas = document.getElementById('input-kelas').value.trim();
+
+            if(!nama || !kelas) return alert('Mohon isi nama dan no. absen!');
+
+            siswa = { nama, kelas };
+            document.getElementById('label-peserta').innerText = `${siswa.nama} (${siswa.kelas})`;
+
+            document.getElementById('box-identitas').classList.add('hidden');
+            document.getElementById('box-soal').classList.remove('hidden');
+            
+            indexSoal = 0;
+            renderSoal();
+        }
+
+        function renderSoal() {
+            const data = bankSoal[indexSoal];
+            document.getElementById('no-soal-aktif').innerText = indexSoal + 1;
+            document.getElementById('total-soal').innerText = bankSoal.length;
+            document.getElementById('kategori-soal').innerText = `Materi: ${data.kategori}`;
+            document.getElementById('teks-soal').innerText = `${indexSoal + 1}. ${data.soal}`;
+
+            const container = document.getElementById('container-pilihan');
+            container.innerHTML = '';
+
+            data.opsi.forEach((opt, idx) => {
+                const isSelected = jawabanSiswa[indexSoal] === idx;
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = `w-full text-left p-4 rounded-xl border transition flex items-center gap-3 font-medium text-sm ${
+                    isSelected ? 'border-emerald-600 bg-emerald-50 text-emerald-900 font-bold shadow-sm' : 'border-slate-200 hover:bg-slate-50 text-slate-700'
+                }`;
+                btn.onclick = () => pilihJawaban(idx);
+                btn.innerHTML = `
+                    <div class="w-6 h-6 rounded-full border flex items-center justify-center text-xs font-bold ${
+                        isSelected ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-slate-300 text-slate-500'
+                    }">${String.fromCharCode(65 + idx)}</div>
+                    <span>${opt}</span>
+                `;
+                container.appendChild(btn);
+            });
+
+            document.getElementById('btn-prev').disabled = indexSoal === 0;
+            if(indexSoal === bankSoal.length - 1) {
+                document.getElementById('btn-next').classList.add('hidden');
+                document.getElementById('btn-finish').classList.remove('hidden');
+            } else {
+                document.getElementById('btn-next').classList.remove('hidden');
+                document.getElementById('btn-finish').classList.add('hidden');
+            }
+        }
+
+        function pilihJawaban(idx) {
+            jawabanSiswa[indexSoal] = idx;
+            renderSoal();
+        }
+
+        function prevSoal() {
+            if(indexSoal > 0) { indexSoal--; renderSoal(); }
+        }
+
+        function nextSoal() {
+            if(indexSoal < bankSoal.length - 1) { indexSoal++; renderSoal(); }
+        }
+
+        function selesaikanKuis() {
+            if(jawabanSiswa.includes(null)) {
+                if(!confirm('Masih ada soal yang belum dijawab. Yakin ingin mengirimkan jawaban sekarang?')) return;
+            }
+
+            let benar = 0;
+            bankSoal.forEach((item, idx) => {
+                if(jawabanSiswa[idx] === item.jawaban) benar++;
+            });
+
+            skorAkhir = Math.round((benar / bankSoal.length) * 100);
+            const statusKetuntasan = skorAkhir >= 70 ? 'TUNTAS' : 'BELUM TUNTAS';
+
+            // Pengiriman data ke Google Sheets melalui Apps Script Anda
+            const formData = new URLSearchParams();
+            formData.append('nama', siswa.nama);
+            formData.append('kelas', siswa.kelas);
+            formData.append('skor', skorAkhir);
+            formData.append('status', statusKetuntasan);
+
+            fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formData.toString()
+            }).catch(err => console.log('Pengiriman data gagal:', err));
+
+            document.getElementById('box-soal').classList.add('hidden');
+            document.getElementById('box-hasil').classList.remove('hidden');
+
+            document.getElementById('hasil-skor').innerText = skorAkhir;
+            const statusBadge = document.getElementById('hasil-status');
+            const iconBox = document.getElementById('hasil-icon');
+
+            if(skorAkhir >= 70) {
+                statusBadge.innerText = "STATUS: TUNTAS";
+                statusBadge.className = "inline-block px-4 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800";
+                iconBox.className = "w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl bg-emerald-100 text-emerald-600";
+                iconBox.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+            } else {
+                statusBadge.innerText = "STATUS: BELUM TUNTAS";
+                statusBadge.className = "inline-block px-4 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800";
+                iconBox.className = "w-20 h-20 mx-auto rounded-full flex items-center justify-center text-4xl bg-amber-100 text-amber-600";
+                iconBox.innerHTML = '<i class="fa-solid fa-book-open"></i>';
+            }
+
+            updateSertifikatView();
+        }
+
+        function updateSertifikatView() {
+            document.getElementById('cert-nama').innerText = siswa.nama || "NAMA SISWA";
+            document.getElementById('cert-kelas').innerText = `No. Absen: ${siswa.kelas || '-'}`;
+            document.getElementById('cert-skor').innerText = skorAkhir;
+            
+            const certStatus = document.getElementById('cert-status');
+            if(skorAkhir >= 70) {
+                certStatus.innerText = "TUNTAS";
+                certStatus.className = "text-[10px] font-bold px-2 py-0.5 rounded text-emerald-800 bg-emerald-100";
+            } else {
+                certStatus.innerText = "BELUM TUNTAS";
+                certStatus.className = "text-[10px] font-bold px-2 py-0.5 rounded text-amber-800 bg-amber-100";
+            }
+
+            const today = new Date();
+            document.getElementById('cert-tanggal').innerText = `Tanggal: ${today.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })}`;
+        }
+
+        function downloadSertifikat() {
+            const certNode = document.getElementById('sertifikat-card');
+            html2canvas(certNode, { scale: 2 }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Sertifikat_Remidi_IPAS_${siswa.nama || 'Siswa'}.png`;
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+
+        function resetKuis() {
+            jawabanSiswa = new Array(bankSoal.length).fill(null);
+            document.getElementById('box-hasil').classList.add('hidden');
+            document.getElementById('box-identitas').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
